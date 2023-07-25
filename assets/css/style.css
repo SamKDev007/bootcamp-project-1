@@ -87,3 +87,10 @@ section img {
 nav a:hover {
     color: var(--white);
 }
+
+.induction{
+    max-width: 80%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
