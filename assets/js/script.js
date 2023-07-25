@@ -1,4 +1,7 @@
+<<<<<<< HEAD:assets/js/script.js
 
+=======
+>>>>>>> edf725d1aa02f9baf37cdbb16b39608272968494:assets/js/index.js
 var submitForm = document.getElementById('login_form');
 submitForm.addEventListener('submit', checkLogin);
 
