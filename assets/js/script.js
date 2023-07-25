@@ -60,7 +60,7 @@ function storeUsersToLocalStorage(users) {
     const user = usersFromLocalStorage.find(u => u.email === enteredEmail && u.password === enteredPassword);
     console.log(user);
     if (user) {
-      window.location.replace('index.html');
+      window.location.replace('homepage.html');
     } else {
      messageElement.textContent = 'Invalid email or password. Please try again.';
     }
