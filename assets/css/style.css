@@ -325,6 +325,25 @@ ul  {
   color: hsl(0, 0%, 100%);
 }
 
+#sign_in {
+  margin-top: 0px;
+}
+
+#weather-info {
+  font-family: 'Cairo', sans-serif;
+  text-align: center;
+  margin-top: -20px;
+  margin-bottom: 10px;
+}
+
+#weather-icon {
+  justify-content: center;
+  margin-top: -30px;
+  margin-left: 586px;
+  filter: drop-shadow(3px 3px 6px black);
+
+}
+
 @media (max-width: 690px) {
   .btn {
     font-size: 1rem;
