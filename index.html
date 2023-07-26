@@ -10,8 +10,9 @@
 </head>
 <body>
 
-  <div class="h-screen bg-opacity-75" style="margin-top: -56px;">
-    <div class="absolute top-0 left-0 w-full h-full bg-cover bg-no-repeat" style="background-image: url(./assets/images/asset9.jpg);">
+  <div class="h-screen relative">
+    <div class="absolute top-0 left-0 w-full h-full bg-cover bg-no-repeat opacity-25" style="background-image: url(./assets/images/asset9.jpg); z-index: -1;">
+    </div>
     <div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
         <div class="sm:mx-auto sm:w-full sm:max-w-sm">
           <h2 class="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">Sign in to your account</h2>
@@ -42,10 +43,9 @@
           </form>
         </div>
       </div>
-    </div>
   </div>
 
-    <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/login.js"></script>
 
 </body>
 </html>

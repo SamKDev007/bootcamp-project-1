@@ -1,50 +1,3 @@
-var submitForm = document.getElementById('login_form');
-submitForm.addEventListener('submit', checkLogin);
-
-
-const initialUsers = [
-  { email: '', password: '' },
-  { email: 'joeblocks@skippers.net.au', password: 'skippers123' },
-  { email: 'jimbob@skippers.net.au', password: '123skippers' },
-  
-];
-if (!localStorage.getItem('users')) {
-  storeUsersToLocalStorage(initialUsers);
-}
-
-
-function storeUsersToLocalStorage(users) {
-    localStorage.setItem('users', JSON.stringify(users));
-  }
-  
-  function getUsersFromLocalStorage() {
-    const usersString = localStorage.getItem('users');
-    return JSON.parse(usersString) || [];
-  }
-  
-  function checkLogin(event) {
-    event.preventDefault();
-    var emailInput = document.getElementById('email');
-    var passwordInput = document.getElementById('password');
-    var messageElement = document.getElementById('message');
-    var enteredEmail = emailInput.value;
-    var enteredPassword = passwordInput.value;
-    
-    var usersFromLocalStorage = getUsersFromLocalStorage();
-    
-    const user = usersFromLocalStorage.find(u => u.email === enteredEmail && u.password === enteredPassword);
-    console.log(user);
-    if (user) {
-      window.location.replace('homepage.html');
-    } else {
-     messageElement.textContent = 'Invalid email or password. Please try again.';
-    }
-    
-    emailInput.value = '';
-    passwordInput.value = '';
-  }
-
-=======
 const start_btn = document.querySelector(".start-btn button");
 const main_page = document.querySelector(".main-page");
 const quiz_page = document.querySelector(".quiz-page");
@@ -59,12 +12,11 @@ start_btn.addEventListener('click', (event) => {
     main_page.style.display = "none";
     quiz_page.style.display = "block";
     showQuestions(0);
-    startTimer(60);
 });
 
 let index = 0;
 let timeValue = 60;
-let userScore = 0;
+let GeneralCompanyInductionuserScore = 0;
 let counter;
 let counterLine;
 
@@ -92,7 +44,7 @@ function choiceSelected(answer, index) {
     const allOptions = options.children.length;
 
     if(userAns == correctAns) {
-        userScore += 10;
+        GeneralCompanyInductionuserScore += 10;
         answer.classList.add("correct");
         console.log("Correct Answer");
     
@@ -107,7 +59,6 @@ function choiceSelected(answer, index) {
         timeValue = 0;
     }
 
-        countdown.textContent = timeValue;
     }
 
         for(i=0; i < allOptions; i++) {
@@ -126,8 +77,6 @@ function choiceSelected(answer, index) {
     } else {
         setTimeout(function() {
             showResults();
-            timeLeft.textContent = "Time's up!";
-            countdown.textContent = "";
             clearInterval(counter);
         }, 1000);
     }
@@ -144,7 +93,10 @@ function showResults() {
     result_page.style.display = "block";
 
     const scoreText = document.querySelector(".result-page .final-score");
-    scoreText.textContent = "Your score: " + userScore;
+    scoreText.textContent = "Your score: " + GeneralCompanyInductionuserScore +"%";
+    if (userscore=100){
+        localStorage.setItem("GeneralCompanyInductionuserscore" ,GeneralCompanyInductionuserScore);
+    }
 
 }
 
@@ -158,7 +110,8 @@ document.addEventListener("DOMContentLoaded", function() {
     const playerName = usernameInput.value;
     const score = {
         name: playerName,
-        score: userScore
+        score: GeneralCompanyInductionuserScore
+
     };
 
     const highscores = JSON.parse(localStorage.getItem("highscores")) || [];
@@ -173,23 +126,3 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
 });
-
-function startTimer(time) {
-    timeValue = time;
-    countdown.textContent = timeValue;
-    counter = setInterval(timer, 1000);
-
-    function timer() {
-        timeValue--;
-        countdown.textContent = timeValue;
-        time--;
-        
-        if (timeValue === 0) {
-            clearInterval(counter);
-            timeLeft.textContent = "Time's up!";
-            countdown.textContent = "";
-            showResults();
-        }
-
-    }
-}
