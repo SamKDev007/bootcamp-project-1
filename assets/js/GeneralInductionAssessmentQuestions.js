@@ -106,7 +106,7 @@ let questions = [
             "1. On the internet",
             "2. In the glove box",
             "3. In responsibility Statements and employment agreements",
-            "4. Dont know"
+            "4. Don't know"
         ]
     },
 
