@@ -8,7 +8,6 @@ fetch(queryURL)
         
         var temperatureKelvin = data.main.temp;
         var temperatureCelsius = Math.round(temperatureKelvin - 273.15);
-        var description = data.weather[0].description;
         var icon = data.weather[0].icon;
         // JavaScript code to set the src attribute dynamically
         var baseURL = "https://openweathermap.org/img/wn/";
@@ -20,7 +19,7 @@ fetch(queryURL)
         
         
         var weatherInfoDiv = document.createElement("div");
-        weatherInfoDiv.innerHTML = temperatureCelsius + "°C<br>" + description;
+        weatherInfoDiv.innerHTML = temperatureCelsius + "°C";
         
         var weatherContainer = document.getElementById("weather-info");
         weatherContainer.appendChild(weatherInfoDiv);
