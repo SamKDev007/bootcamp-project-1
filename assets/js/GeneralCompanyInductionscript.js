@@ -12,7 +12,6 @@ start_btn.addEventListener('click', (event) => {
     main_page.style.display = "none";
     quiz_page.style.display = "block";
     showQuestions(0);
-    // startTimer(60);
 });
 
 let index = 0;
@@ -60,7 +59,6 @@ function choiceSelected(answer, index) {
         timeValue = 0;
     }
 
-        // countdown.textContent = timeValue;
     }
 
         for(i=0; i < allOptions; i++) {
@@ -79,8 +77,6 @@ function choiceSelected(answer, index) {
     } else {
         setTimeout(function() {
             showResults();
-            timeLeft.textContent = "Time's up!";
-            countdown.textContent = "";
             clearInterval(counter);
         }, 1000);
     }
@@ -130,23 +126,3 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
 });
-
-function startTimer(time) {
-    timeValue = time;
-    countdown.textContent = timeValue;
-    counter = setInterval(timer, 1000);
-
-    function timer() {
-        timeValue--;
-        countdown.textContent = timeValue;
-        time--;
-        
-        if (timeValue === 0) {
-            clearInterval(counter);
-            timeLeft.textContent = "Time's up!";
-            countdown.textContent = "";
-            showResults();
-        }
-
-    }
-}
