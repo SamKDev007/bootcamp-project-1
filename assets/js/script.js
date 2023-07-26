@@ -59,7 +59,7 @@ start_btn.addEventListener('click', (event) => {
     main_page.style.display = "none";
     quiz_page.style.display = "block";
     showQuestions(0);
-    startTimer(60);
+    // startTimer(60);
 });
 
 let index = 0;
