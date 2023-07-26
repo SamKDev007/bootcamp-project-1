@@ -12,12 +12,12 @@ start_btn.addEventListener('click', (event) => {
     main_page.style.display = "none";
     quiz_page.style.display = "block";
     showQuestions(0);
-    startTimer(60);
+    // startTimer(60);
 });
 
 let index = 0;
 let timeValue = 60;
-let userScore = 0;
+let GeneralCompanyInductionuserScore = 0;
 let counter;
 let counterLine;
 
@@ -45,7 +45,7 @@ function choiceSelected(answer, index) {
     const allOptions = options.children.length;
 
     if(userAns == correctAns) {
-        userScore += 10;
+        GeneralCompanyInductionuserScore += 10;
         answer.classList.add("correct");
         console.log("Correct Answer");
     
@@ -60,7 +60,7 @@ function choiceSelected(answer, index) {
         timeValue = 0;
     }
 
-        countdown.textContent = timeValue;
+        // countdown.textContent = timeValue;
     }
 
         for(i=0; i < allOptions; i++) {
@@ -97,7 +97,10 @@ function showResults() {
     result_page.style.display = "block";
 
     const scoreText = document.querySelector(".result-page .final-score");
-    scoreText.textContent = "Your score: " + userScore;
+    scoreText.textContent = "Your score: " + GeneralCompanyInductionuserScore +"%";
+    if (userscore=100){
+        localStorage.setItem("GeneralCompanyInductionuserscore" ,GeneralCompanyInductionuserScore);
+    }
 
 }
 
@@ -111,7 +114,8 @@ document.addEventListener("DOMContentLoaded", function() {
     const playerName = usernameInput.value;
     const score = {
         name: playerName,
-        score: userScore
+        score: GeneralCompanyInductionuserScore
+
     };
 
     const highscores = JSON.parse(localStorage.getItem("highscores")) || [];
