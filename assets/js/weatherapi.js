@@ -9,7 +9,7 @@ fetch(queryURL)
         var temperatureKelvin = data.main.temp;
         var temperatureCelsius = Math.round(temperatureKelvin - 273.15);
         var description = data.weather[0].description;
-
+        
         
         var weatherInfoDiv = document.createElement("div");
         weatherInfoDiv.innerHTML = "Temperature: " + temperatureCelsius + "°C<br>Description: " + description;
