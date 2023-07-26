@@ -8,6 +8,7 @@
 }
 
 *{
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
@@ -18,8 +19,7 @@ body {
 }
 
 header {
-    background-color: var(--ikea-blue);
-    color: var(--white);
+    color: black;
     text-align: left;
     width: 100%;
     height: 20px;
@@ -29,7 +29,7 @@ header {
 }
 
 .logo {
-    background-color: var(--white);
+    background-color: black;
     width: 100%;
     height: 100px;
     margin-top: -100px;
@@ -44,12 +44,10 @@ header img {
 }
 
 section {
-    background-color: var(--light-blue);
-    width: 10%;
+    width: 100%;
     min-width: 100px;
     padding: 1rem;
     height: 100vh;
-    margin-top: 115px;
     position: relative;
 }
 
@@ -93,4 +91,251 @@ nav a:hover {
     text-align: center;
     margin-left: auto;
     margin-right: auto;
+}
+
+.carousel-control-prev,
+  .carousel-control-next {
+    /* Change the color to your desired darker color */
+    filter: invert(0.7); /* Adjust the value between 0 to 1 to control the darkness */
+  }
+
+  .header .title {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+.start-desc {
+    text-align: center;
+    width: 600px;
+    margin: auto;
+}
+
+.highscores {
+    position: absolute;
+    top: 20px;
+    left: 15px;
+}
+
+.time-left {
+  position: absolute;
+  right: 80px;
+  top: 20px;
+
+}
+
+.countdown {
+  position: absolute;
+  right: 50px;
+  top: 20px;
+}
+
+.start-btn, .quiz-page{
+    display: flex;
+    justify-content: center; /* this centers the button horizontally */
+   
+}
+
+/* Change button's colours when hovering over */
+.start-btn button {
+  border: none;
+  background-color: var(--egyptblue);
+  border-radius: 25px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px 0px;
+  color: black;
+  font-size: 20px;
+  line-height: 10px;
+  margin-top: 20px;
+  padding: 14px 20px;
+  text-align: center;
+  cursor: pointer;
+  top: 250px;
+}
+
+.start-btn button:hover {
+ background-color: var(--hovercolor);
+}
+
+
+
+.quiz-page .options button {
+  border: none;
+  /* background-color: var(--egyptblue); */
+  border-radius: 25px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px 0px;
+  color: black;
+  font-size: 20px;
+  line-height: 10px;
+  margin-top: 20px;
+  padding: 14px 20px;
+  text-align: center;
+  cursor: pointer;
+  top: 250px;
+}
+
+.quiz-page .options button:hover {
+  background-color: var(--hovercolor);
+}
+
+section .question-txt {
+  font-size: 30px;
+  text-align: center;
+  margin-top: 100px;
+  width: 40%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+section .options {
+  text-align: center;
+}
+
+section .options .choice.correct button {
+  border: none;
+  background-color: limegreen;
+  border-radius: 25px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px 0px;
+  color: hsl(0, 0%, 100%);
+  font-size: 20px;
+  line-height: 10px;
+  padding: 14px 20px;
+}
+
+section .options .choice.incorrect button {
+  border: none;
+  background-color: red;
+  border-radius: 25px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px 0px;
+  color: hsl(0, 0%, 100%);
+  font-size: 20px;
+  line-height: 10px;
+  padding: 14px 20px;
+}
+
+
+.result-page {
+  display: none;
+}
+
+.result-page .quiz-over {
+  font-size: 40px;
+  text-align: center;
+  margin-top: 100px;
+  margin-bottom: 20px;
+}
+
+.result-page .final-score {
+  text-align: center;
+}
+
+.result-page .submit-scores {
+  text-align: center;
+  
+}
+
+.result-page .submit-scores input[type=text] {
+  display: inline-block;
+  padding: 12px 20px;
+  margin: 8px 0;
+  border: 2px solid var(--egyptblue);
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 18px;
+}
+
+.result-page .submit-scores input[type=text]::placeholder {
+  font-size: 18px;
+  width: 100%;
+  text-align: left;
+}
+
+.result-page .submit-scores #submit-btn {
+  border: none;
+  background-color: var(--egyptblue);
+  border-radius: 25px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px 0px;
+  color: hsl(0, 0%, 100%);
+  font-size: 20px;
+  line-height: 10px;
+  margin-top: 20px;
+  padding: 14px 20px;
+  text-align: center;
+  cursor: pointer;
+
+}
+
+.result-page .submit-scores #submit-btn:hover {
+  background-color: var(--hovercolor);
+}
+
+.result-page .submit-scores #submit-btn a {
+  text-decoration: none;
+  color: hsl(0, 0%, 100%);
+}
+
+/* Highscores Page */
+
+h1 {
+  text-align: center;
+  margin-top: 100px;
+}
+
+ul  {
+  margin-left: 860px;
+}
+
+.hs-btns .clear-hs {
+  border: none;
+  background-color: var(--egyptblue);
+  border-radius: 25px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px 0px;
+  color: hsl(0, 0%, 100%);
+  font-size: 20px;
+  line-height: 10px;
+  margin-top: 20px;
+  padding: 14px 20px;
+  text-align: center;
+  cursor: pointer;
+  margin-left: 780px;
+  margin-right: 20px;
+}
+
+.hs-btns .clear-hs:hover {
+  background-color: var(--hovercolor);
+}
+
+.hs-btns .go-back {
+  border: none;
+  background-color: var(--egyptblue);
+  border-radius: 25px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px 0px;
+  font-size: 20px;
+  line-height: 10px;
+  margin-top: 20px;
+  padding: 14px 20px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.hs-btns .go-back:hover {
+  background-color: var(--hovercolor);
+}
+
+.hs-btns .go-back a {
+  text-decoration: none;
+  color: hsl(0, 0%, 100%);
+}
+
+@media (max-width: 690px) {
+  .btn {
+    font-size: 1rem;
+    margin: 16px 0px 0px 0px;
+    padding: 10px 15px;
+  }
+
+}
+
+@media (max-width: 500px) {
+  .btn {
+    font-size: 0.8rem;
+  }
 }
