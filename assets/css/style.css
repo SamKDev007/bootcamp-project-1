@@ -325,8 +325,12 @@ ul  {
   color: hsl(0, 0%, 100%);
 }
 
-#sign_in {
-  margin-top: 0px;
+.email-input-field {
+  text-indent: 5px;
+}
+
+.password-input-field {
+  text-indent: 5px;
 }
 
 #weather-info {
