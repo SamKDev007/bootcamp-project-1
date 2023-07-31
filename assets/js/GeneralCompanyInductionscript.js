@@ -102,17 +102,9 @@ function showResults() {
 
 document.addEventListener("DOMContentLoaded", function() {
     const submitBtn = document.getElementById("submit-btn");
-    const usernameInput = document.getElementById("username-input");
 
     submitBtn.addEventListener("click", function(event) {
         event.preventDefault();
-
-    const playerName = usernameInput.value;
-    const score = {
-        name: playerName,
-        score: GeneralCompanyInductionuserScore
-
-    };
 
     const highscores = JSON.parse(localStorage.getItem("highscores")) || [];
 
